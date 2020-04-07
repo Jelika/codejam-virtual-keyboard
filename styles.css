@@ -65,19 +65,37 @@ textarea {
   box-shadow: 0 0 15px rgba(154, 141, 204, .9);
   cursor: grab;
   border-radius: 10px;
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.6s;
 }
 
 .keyboard--key:active, .keyboard--key.active {
   background-color: rgba(19, 14, 24, 0.856);
   box-shadow: 0 0 15px rgba(188, 177, 202, 1);
   color: rgb(226, 217, 255);
-  border-radius: 10px;
-  transition: all 0.3s;
+  animation-name: bounce;
+  animation-duration: 0.2s;
 }
 
 .functional_keys {
   background-color: rgb(29, 25, 46);
   font-size: 0.8rem;
+}
+
+@keyframes bounce {
+  0%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform:scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 #Tab {
